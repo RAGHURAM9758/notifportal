@@ -1,0 +1,35 @@
+<% notifs = notifs.split(',') %>
+<% notifs.map!{ |c| c.to_i } %>
+<% notifs.each do |notif| %>
+<% notifdetails = Notification.where(id: notif) %>
+<% if !notifdetails.empty? %>
+<% notifdetails = notifdetails[0] %>
+	<% post = Post.find_by(id: notifdetails.post_id) %>
+	<% li_id=[getid,notifdetails.id] %>
+	<% li_id=li_id.join %>
+	<!--<li id='<%= li_id %>'><%= link_to notifdetails.message, post_path(post) %></li>-->
+	<div class="col-md-4 col-lg-4  post-<%= notif%>">
+	<div class="notificationblock">
+			<div id="notificationheader">
+					<div class="hblock">
+					<b id="headertext"><%= post.cat.category %></b>
+					<% @n=notif %>
+					<%= form_tag("/notif", remote: true, method:"post",class: "crossform") do %>
+					<%= text_field_tag :notif,@n,class: 'tfield' %>
+					<%= image_submit_tag("multiply.png", id: "submit") %></div>
+					<% end %>
+					</div>
+					<%= post.content %>
+					<% if post.date %>
+						<div class="date"><b><u><%= (post.date).strftime("%B %d, %Y") %></u></b></div>
+					<% end %>
+		  		<% if post.fromdate and post.todate %>
+		  			<p>Event starts from <%=post.fromdate %>
+		  			and ends at <%= post.todate %></p>
+		  		<%end%>	
+		 		  <%= link_to 'Read more',post_path(:id => post.id.to_s+"@"), :remote => true, "data-toggle" => "modal", "data-target" => "#postModal"%>	
+			</div>
+		</div>
+<% end %>
+<% end %>
+<%= javascript_include_tag "staticpages" %>
