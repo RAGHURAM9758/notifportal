@@ -75,7 +75,7 @@ table
 //d
 .post-head
 {
-    border-bottom: 1px solid #ddd;
+//    border-bottom: 1px solid #ddd;
     min-height:20px!important;
     padding-bottom:10px!important;
 }
@@ -85,14 +85,14 @@ table
 }
 .post-body
 {
-    border-radius:5px;
-    background-color:#f9f9f9;
-    min-height:300px!important;
-    border:1px solid #ddd;
-    padding-top:15px;
+//    border-radius:5px;
+//    background-color:#f9f9f9;
+    min-height:100px!important;
+//    border:1px solid #ddd;
+//    padding-top:15px;
     font-family:"Times New Roman", Times, serif;
     font-size:20px;
-		margin-left:10px;
+//		margin-left:10px;
 		margin-bottom:10px;
 }
 .category
@@ -333,10 +333,11 @@ padding-top:20px;
 
 .post{
 background-color:white;
-margin-top:3%;
+padding-top:3%;
 max-width:800px;
 margin-left:auto;
 margin-right:auto;
+margin-top:3em;
 }
 
 
@@ -363,7 +364,27 @@ padding-bottom:3%;
 padding-top:3%;
 }
 
+.header{
+border-bottom: 1px solid #eee;
+}
+
 /*.date{
 border:2px solid black;
 width:80%;
 }*/
+
+.post-title{
+font-size:2em;
+color:#222;
+padding-bottom:0.3em;
+}
+
+.category{
+background-color:#4d85d1;
+color:white;
+padding:4px 6px 4px 6px;
+font-size:80%;
+}
+.category:hover{
+color:white;
+}

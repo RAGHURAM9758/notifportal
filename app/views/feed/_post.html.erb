@@ -1,15 +1,14 @@
+<% title=post.title %>
 <div class="post container">
-	<div class="row">
-		<div class="post-head col-md-8">
-			<h1><%= (post.title).upcase %></h1>
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="post-body col-md-8">
-			<%= simple_format(post.content,html_options={class: "content"},wrapper_tag:"div") %>
-		</div>
-	
-		
-	</div>
+  <div class="header">
+    <div class="post-head">
+      <h2 class="post-title"><b><%=  title.slice(0,1).capitalize + title.slice(1..-1) %></b></h2>
+      on <%= (post.updated_at).strftime("%B").slice(0,3) + " " + (post.updated_at).strftime("%e") %>
+        By <a href="#"><%= post.user.fullname %></a>
+        under <a href="#" class="category"><%= post.cat.category %></a>
+    </div>
+  </div>
+<div class="post-body">
+      <%= simple_format(post.content,html_options={class: "content"},wrapper_tag:"div") %>
+  </div>
 </div>

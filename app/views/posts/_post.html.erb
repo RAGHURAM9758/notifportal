@@ -1,51 +1,34 @@
+<% title=post.title %>
 <div class="post container">
-	<div class="row">
-		<div class="post-head col-md-8">
-			<h1><%= (post.title).upcase %></h1>
+	<div class="header">
+		<div class="post-head">
+			<h2 class="post-title"><b><%=  title.slice(0,1).capitalize + title.slice(1..-1) %></b></h2>		
+			on <%= (post.updated_at).strftime("%B").slice(0,3) + " " + (post.updated_at).strftime("%e") %>
+				By <a href="#"><%= post.user.fullname %></a>
+				under <a href="#" class="category"><%= post.cat.category %></a>
 		</div>
 	</div>
-	<br>
-	<div class="row">
-		<div class="col-md-offset-3">
-			on <%= (post.updated_at).strftime("%B %e,%Y") %>
-				by <b><%= post.user.fullname %></b>
-		</div>
-	</div>
-	<div class="row">
-		<div class="post-body col-md-8">
+			 <% if (post.fromdate).nil? && (post.todate).nil? && !(post.date).nil?%>
+              <b>Event Date: </b><%= (post.date) %>
+      <br>
+        <% end %>
+        <% if !(post.fromdate).nil? && !(post.todate).nil? && (post.date).nil? %>
+          <b> from:</b><%=(post.fromdate)%>
+            <br>
+          <b> to: </b><%= (post.todate) %>
+        <% end %>
+    <% if !(post.time).nil? %>
+        <b>Time:</b><%= (post.time).strftime("%H %p") %>
+    <% end %>
+    <% if !(post.location).empty? %>
+        <b>Location:</b><%= post.location %>
+			<% end %>
+	<div class="post-body">
 			<%= simple_format(post.content,html_options={class: "content"},wrapper_tag:"div") %>
-		</div>
-		<div class="col-md-3 category">
-			<b>Category: </b>   <%= post.cat.category %>
-		</div>
-		<% if (post.fromdate).nil? && (post.todate).nil? && !(post.date).nil?%>
-        	<div class="col-md-3">
-          		<b>Event Date: </b><%= (post.date) %>
-        	</div>
-			<br>
-      	<% end %>
-      	<% if !(post.fromdate).nil? && !(post.todate).nil? && (post.date).nil? %>
-					<div class="col-md-3 dates">
-					<b>	from:</b><%=(post.fromdate)%>
-        		<br>
-        	<b>	to: </b><%= (post.todate) %>
-      		</div>
-      	<% end %>
-		<% if !(post.time).nil? %>
-			<div class="col-md-3">
-				<b>Time:</b><%= (post.time).strftime("%H %p") %>
-			</div>
-		<% end %>
-		<% if !(post.location).empty? %>
-			<div class="col-md-3">
-      	<b>Location:</b><%= post.location %>
-      </div>
-		<% end %>
+	</div>
+</div>
 		<% if getid == post.user_id %>
 			 <div class="col-md-3">
         <%= link_to 'Edit', edit_post_path(post),:class => "btn btn-warning" %>
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?'},:class => "btn btn-warning" %>
       <% end %>
-			</div>				
-	</div>
-</div>
