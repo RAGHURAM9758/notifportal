@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'staticpages#home'
 	post 'notif' => 'staticpages#notif'
 	get 'json' => 'staticpages#json'
+	get 'calendar' => 'calendar#index'
 	#post 'login' => 'sessions#create'
 	#delete 'logout' => 'sessions#destroy'
 #	get 'newpost'  => 'posts#new'

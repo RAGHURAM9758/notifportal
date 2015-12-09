@@ -1,0 +1,19 @@
+<div class="date yesterday">
+	<%= Date.yesterday.strftime("%b %d") %>
+	<% @post_yes.each do |yes_post|%>
+		<%= yes_post.title %>
+	<% end %>
+</div>
+<div class="date today">
+  <%= Date.today.strftime("%b %d") %>
+  <% @post_today.each do |tod_post|%>
+    <%= tod_post.title %>
+  <% end %>
+</div>
+<div class="date tomorrow">
+  <%= Date.tomorrow.strftime("%b %d") %>
+  <% @post_tom.each do |tom_post|%>
+    <%= tom_post.title %>
+  <% end %>
+</div>
+

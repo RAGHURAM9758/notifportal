@@ -6,10 +6,8 @@
 			on <%= (post.updated_at).strftime("%B").slice(0,3) + " " + (post.updated_at).strftime("%e") %>
 				By <a href="#"><%= post.user.fullname %></a>
 				under <a href="#" class="category"><%= post.cat.category %></a>
-		</div>
-	</div>
-			 <% if (post.fromdate).nil? && (post.todate).nil? && !(post.date).nil?%>
-              <b>Event Date: </b><%= (post.date) %>
+				<% if (post.fromdate).nil? && (post.todate).nil? && !(post.date).nil?%>
+              <b> Event Date: </b><%= (post.date) %>
       <br>
         <% end %>
         <% if !(post.fromdate).nil? && !(post.todate).nil? && (post.date).nil? %>
@@ -23,7 +21,10 @@
     <% if !(post.location).empty? %>
         <b>Location:</b><%= post.location %>
 			<% end %>
-	<div class="post-body">
+
+		</div>
+	</div>
+			 	<div class="post-body">
 			<%= simple_format(post.content,html_options={class: "content"},wrapper_tag:"div") %>
 		<% if false %>
 		<% if getid == post.user_id %>
