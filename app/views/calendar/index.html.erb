@@ -1,3 +1,9 @@
+<div class="date yesterday2">
+	<%= Date.yesterday.yesterday.strftime("%b %d") %>
+	<% @post_yes2.each do |yes2_post|%>
+		<%= yes2_post.title %>
+	<% end %>
+</div>
 <div class="date yesterday">
 	<%= Date.yesterday.strftime("%b %d") %>
 	<% @post_yes.each do |yes_post|%>
@@ -16,4 +22,9 @@
     <%= tom_post.title %>
   <% end %>
 </div>
-
+<div class="date tomorrow2">
+  <%= Date.tomorrow.tomorrow.strftime("%b %d") %>
+  <% @post_tom2.each do |tom2_post|%>
+    <%= tom2_post.title %>
+  <% end %>
+</div>
