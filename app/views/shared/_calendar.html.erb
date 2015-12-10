@@ -1,7 +1,41 @@
-<div class="sidebar calendar col-md-3">
-<h3><center>Calender</center></h2>
-<% for i in 0..6 do %>
-<div class="month panel panel-default month<%=i%>"><%=link_to  Time.now().day+i,search_path(:search=>Time.now().strftime("%F")) %>
+<div class="date yesterday2">
+  <div class="icon-top"><%= Date.yesterday.yesterday.strftime("%b %d") %></div>
+  <div class="icon-bot">
+	<% @post_yes2.each do |yes2_post|%>
+    <%= link_to (yes2_post.title),post_path(yes2_post) %><br>
+  <% end %>
 	</div>
-<%end%>
-</div
+</div>
+<div class="date yesterday">
+ <div class="icon-top"><%= Date.yesterday.strftime("%b %d") %></div>
+	<div class="icon-bot">
+  <% @post_yes.each do |yes_post|%>
+    <%= link_to (yes_post.title),post_path(yes_post) %><br>
+  <% end %>
+	</div>
+</div>
+<div class="date today">
+ <div class="icon-top"><%= Date.today.strftime("%b %d") %></div>
+	<div class="icon-bot">
+  <% @post_today.each do |tod_post|%>
+    <%= link_to (tod_post.title), post_path(tod_post) %><br>
+  <% end %>
+	</div>
+</div>
+<div class="date tomorrow">
+  <div class="icon-top"><%= Date.tomorrow.strftime("%b %d") %></div>
+	<div class="icon-bot">
+  <% @post_tom.each do |tom_post|%>
+    <%= link_to (tom_post.title),post_path(tom_post) %><br>
+  <% end %>
+	</div>
+</div>
+<div class="date tomorrow2">
+  <div class="icon-top"><%= Date.tomorrow.tomorrow.strftime("%b %d") %></div>
+	<div class="icon-bot">
+  <% @post_tom2.each do |tom2_post|%>
+    <%= link_to tom2_post.title,post_path(tom2_post) %><br>
+  <% end %>
+	</div>
+</div>
+

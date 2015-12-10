@@ -388,3 +388,31 @@ font-size:80%;
 .category:hover{
 color:white;
 }
+
+/* calednar */
+.calendar-space{
+	display:flex;
+ flex-flow: row wrap;
+ justify-content: space-around;
+}
+
+.date{
+	width:100px;
+	height:100px;
+	background-color:white;
+	margin-top:10px;
+	border:1px solid #34495e;
+}
+
+.icon-top{
+	height:30px;
+	color:white;
+	background-color:#34495e;
+	text-align:center;
+	font-size:80%;
+	font-size:1.5em;
+}
+
+.icon-bot{
+	text-align:center;
+}
