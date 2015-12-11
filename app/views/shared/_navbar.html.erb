@@ -3,8 +3,7 @@
 	<ul>
 		<li class="nav-li" ><a href="/" class='nav-links' ><b>HOME</b></a></li>
 		<li class="nav-li"><div class='nav-search'>
-			<i class="fa fa-search"></i>
-			<input type="text" class="nav-input" size="50" placeholder="Search">	
+			<%=render 'shared/search'%>
 		</div></li>
 		<li class="nav-li" ><a href="/t5efeed" class='nav-links' >T5E Feeds</a></li>
 		<% if logged_in? %>
