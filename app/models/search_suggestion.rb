@@ -5,11 +5,9 @@ class SearchSuggestion < ActiveRecord::Base
 
 	def self.index_posts
 		Post.find_each do |post|
-			term = post.title+" "+post.content
+			#term = post.title+" "+post.content
+			term = post.title
 			index_name(term,post.title,post.id)
-			# index_prof(course.prof)
-			# course.name.split.each { |t| index_term(t) }
-			# course.prof.split.each { |t| index_term(t) }
 		end
 	end
 
