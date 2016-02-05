@@ -6,17 +6,28 @@
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
 </head>
-<body>
-<%= render "shared/navbar"%>
-<div class="main container">
+<body style="white" >
+<div id="wrapper">
 
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
 
-    <%= yield %>
+	<%= render "shared/navbar"%>
 
-</div>
+	<div id="page-wrapper">
+		<div class="container">
+			<div class="jumbotron" >
+				<h1>rrr</h1>
+			</div>
+
+		</div>
+		<div class="main container">
+
+		    <% flash.each do |key, value| %>
+		        <div class="alert alert-<%= key %>"><%= value %></div>
+		    <% end %>
+
+		    <%= yield %>
+		</div>
+	</div>
 
 </div>
 </html>
