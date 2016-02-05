@@ -10,11 +10,8 @@ default: &default
   #username: root
   #password: ragasree
   username: root
-<<<<<<< HEAD
   password: password
-=======
-  password: 222
->>>>>>> 70ebe7fc5101fe7c732a1b6ff6791aa448d1e886
+  #password: 222
   pool: 5
   socket: /var/run/mysqld/mysqld.sock
 
@@ -22,13 +19,11 @@ development:
   <<: *default
   database: notification_development
   username: root
-<<<<<<< HEAD
   #password: ragasree
   password: password
-=======
-  password: 222
+  #password: 222
 
->>>>>>> 70ebe7fc5101fe7c732a1b6ff6791aa448d1e886
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -36,31 +31,24 @@ test:
   <<: *default
   database: notification_test
   username: root
-<<<<<<< HEAD
   #password: ragasree
   password: password
-=======
-  password: 222
->>>>>>> 70ebe7fc5101fe7c732a1b6ff6791aa448d1e886
+  #password: 222
 
 production:
   <<: *default
   database: notification_production
   username: root
-<<<<<<< HEAD
   #password: ragasree
   password: password
-=======
-  password: 222
->>>>>>> 70ebe7fc5101fe7c732a1b6ff6791aa448d1e886
+  #password: 222
+
 
 students_1415:
   <<: *default
   database: students_1415
   username: root
-<<<<<<< HEAD
   #password: ragasree
   password: password
-=======
-  password: 222
->>>>>>> 70ebe7fc5101fe7c732a1b6ff6791aa448d1e886
+  #password: 222
+
