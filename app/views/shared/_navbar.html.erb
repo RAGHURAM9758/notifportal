@@ -1,25 +1,65 @@
-<nav>
-	<div class="centernav">
-	<ul>
-		<li class="nav-li" ><a href="/" class='nav-links' ><b>HOME</b></a></li>
-		<li class="nav-li"><div class='nav-search'>
-			<%=render 'shared/search'%>
-		</div></li>
-		<li class="nav-li" ><a href="/t5efeed" class='nav-links' >T5E Feeds</a></li>
-		<% if logged_in? %>
-			<li class="nav-li" ><%= link_to "All Posts", posts_path, class: "nav-links" %></li>
-			<% if admin? %>
-				<li class="nav-li" ><%= link_to "New Post", new_post_path, class: "nav-links" %></li>
-			<% end %>	
-			<li class="dropdown nav-li">
-				<a href="#" class="dropdown-toggle nav-links" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.fullname %><span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li><%= link_to "Profile" %></li>
-					<li><%= link_to "Categories",cats_path %></li>
-					<li><%= link_to "Log out", logout_path , method: "delete" %></li>             </ul>
-			</li>
-			<li class="nav-li"><a class="btn btn-warning" href="http://students.iitm.ac.in/feedback">Give Feedback</a></li>
-		<% end %>
-	</ul>
-	</div>
-</nav>
+
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class='navbar-brand' ><b>HOME</b></a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+            	<li class="nav-li" ><a href="/t5efeed" class='nav-links' >T5E Feeds</a></li>
+            	<% if logged_in? %>
+            	<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                <% end %>
+            </ul>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                           <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                           <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                           <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                           <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            
+
+    </nav>
+
+
+	
