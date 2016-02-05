@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :search_suggestions, only: [:index]
+
   get 'feed/index'
 
 #  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
